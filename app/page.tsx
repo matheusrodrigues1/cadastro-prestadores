@@ -1,6 +1,6 @@
 import Image from 'next/image'
-import Header from './Components/Header'
-import Cadastrar from './Components/Cadastrar'
+import Header from './components/Header'
+import Cadastrar from './components/Cadastrar'
 
 export default function Home() {
   return (
