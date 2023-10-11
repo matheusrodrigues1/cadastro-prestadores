@@ -1,10 +1,11 @@
 'use client'
 
 import React from "react";
-import { useHistory } from 'react-router-dom';
 import { useForm } from "react-hook-form";
 import axios from 'axios';
 import { z, ZodError } from 'zod';
+import { Link} from "react-router-dom";
+import { useRouter } from "next/navigation";
 
 interface FormValues {
   nome: string;
@@ -20,7 +21,7 @@ const schemaForm = z.object({
 });
 
 export default function Cadastrar({}) {
-    const history = useHistory();
+    const router = useRouter()
     const { handleSubmit, register, formState: { errors }, reset } = useForm<FormValues>({
       defaultValues: {
         nome: "",
@@ -53,7 +54,6 @@ export default function Cadastrar({}) {
           input.value = '';
         });
 
-        history.push('/servico');
       } catch (error) {
         if (error instanceof ZodError) {
           console.error("Erro de validação:", error.errors);
@@ -74,7 +74,7 @@ export default function Cadastrar({}) {
             <input type="email" {...register('email')} placeholder="EMAIL"className="p-3 rounded-xl bg-zinc-900 text-gray-50"/>
             <input type="tel" {...register('telefone')} placeholder="TELEFONE"className="p-3 rounded-xl bg-zinc-900 text-gray-50"/>
 
-            <button type="submit" className="p-5 mt-5 rounded-xl bg-blue-700 text-gray-50">CONTINUAR</button>
+            <button type="submit" onClick={() => router.push('/servicos')} className="p-5 mt-5 rounded-xl bg-blue-700 text-gray-50">CONTINUAR</button>
           </form>
         </div>
       </div>
