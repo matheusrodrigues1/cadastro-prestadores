@@ -1,6 +1,7 @@
 'use client'
 
 import React from "react";
+import { useHistory } from 'react-router-dom';
 import { useForm } from "react-hook-form";
 import axios from 'axios';
 import { z, ZodError } from 'zod';
@@ -19,7 +20,7 @@ const schemaForm = z.object({
 });
 
 export default function Cadastrar({}) {
-
+    const history = useHistory();
     const { handleSubmit, register, formState: { errors }, reset } = useForm<FormValues>({
       defaultValues: {
         nome: "",
@@ -51,6 +52,8 @@ export default function Cadastrar({}) {
         inputs.forEach(input => {
           input.value = '';
         });
+
+        history.push('/servico');
       } catch (error) {
         if (error instanceof ZodError) {
           console.error("Erro de validação:", error.errors);
