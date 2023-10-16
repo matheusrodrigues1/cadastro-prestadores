@@ -53,7 +53,7 @@ export default function Cadastrar({}) {
         formData.append('nome', data.nome);
         formData.append('email', data.email);
         formData.append('telefone', data.telefone);
-        formData.append('valor', data.valor.toString()); // Não é necessário converter para string
+        formData.append('valor', data.valor.toString());
         formData.append('nome_servico', data.nome_servico);
         formData.append('descricao', data.descricao);
 
