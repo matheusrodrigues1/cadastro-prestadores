@@ -27,9 +27,9 @@ function Page() {
   return (
     <>
       <div  className='flex flex-1 justify-center items-center h-screen w-screen bg-stone-900'>
-        <form onSubmit={handleSubmit(handleCSVSubmit)} className='flex bg-orange-500 p-10 rounded-3xl gap-5 flex-col justify-center items-center' encType="multipart/form-data">
+        <form onSubmit={handleSubmit(handleCSVSubmit)} className='flex bg-gray-50 p-10 rounded-3xl gap-5 flex-col justify-center items-center' encType="multipart/form-data">
           <input type="file" {...register('file')} />
-          <button type="submit" className='rounded-xl bg-blue-700 p-2 w-32'>Importar</button>
+          <button type="submit" className='pt-4 pb-4 pl-40 pr-40 mt-3 rounded-xl bg-blue-700 text-gray-50'>Importar</button>
         </form>
       </div>
     </>
