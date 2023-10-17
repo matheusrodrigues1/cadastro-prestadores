@@ -15,6 +15,9 @@ function Header() {
           <button className='h-10 w-56 bg-red-600 rounded-xl'>
             <Link href="/">Cadastrar prestador</Link>
           </button>
+          <button className='h-10 w-56 bg-red-600 rounded-xl'>
+            <Link href="/import">Importar prestador</Link>
+          </button>
         </div>
       </div>
     </>
