@@ -76,32 +76,32 @@ export default function Cadastrar({}) {
 
   return (
     <>
-      <div className="flex w-full justify-center border-transparent items-center bg-stone-900">
-        <div className="flex flex-col rounded-2xl pl-10 pr-10 pb-3 pt-2 justify-center items-center gap-7 bg-slate-100">
-          <h1 className="text-3xl font-bold whitespace-nowrap">Cadastrar Prestador</h1>
+      <div className="flex w-screen h-screen justify-center pt-10 items-start bg-stone-900">
+        <div className="flex flex-col py-2 px-5 rounded-2xl justify-center items-center gap-4 bg-slate-100">
+          <h1 className="font-bold text-lg whitespace-nowrap">Cadastrar Prestador</h1>
           <form onSubmit={handleSubmit(handleFormSubmit)} className="flex flex-col gap-1" encType="multipart/form-data">
             
-            <input type="file" {...register('foto')} className="p-2 rounded-e bg-zinc-900 text-gray-50" />
-            <input type="text" {...register('nome')} placeholder="NOME" className="p-2 rounded-e bg-zinc-900 text-gray-50" />
+            <input type="file" {...register('foto')} className="p-1 w-52 rounded-e bg-zinc-900 text-gray-50" />
+            <input type="text" {...register('nome')} placeholder="NOME" className="p-1 w-52 rounded-e bg-zinc-900 text-gray-50" />
             {errors.nome?.message && <span className="text-red-500 text-sm">{errors.nome.message}</span>}
 
-            <input type="email" {...register('email')} placeholder="EMAIL" className="p-2 rounded-e bg-zinc-900 text-gray-50" />
+            <input type="email" {...register('email')} placeholder="EMAIL" className="p-1 w-52 rounded-e bg-zinc-900 text-gray-50" />
             {errors.email?.message && <span className="text-red-500 text-sm">{errors.email.message}</span>}
 
-            <input type="tel" {...register('telefone')} placeholder="TELEFONE" className="p-2 rounded-e bg-zinc-900 text-gray-50" />
+            <input type="tel" {...register('telefone')} placeholder="TELEFONE" className="p-1 w-52 rounded-e bg-zinc-900 text-gray-50" />
             {errors.telefone?.message && <span className="text-red-500 text-sm">{errors.telefone.message}</span>}
 
-            <input type="text" {...register('nome_servico')} placeholder="NOME DO SERVIÇO" className="p-2 rounded-e bg-zinc-900 text-gray-50" />
+            <input type="text" {...register('nome_servico')} placeholder="NOME DO SERVIÇO" className="p-1 w-52 rounded-e bg-zinc-900 text-gray-50" />
             {errors.nome_servico?.message && <span className="text-red-500 text-sm">{errors.nome_servico.message}</span>}
 
-            <input type="text" {...register('descricao')} placeholder="DESCRIÇÃO" className="p-4 rounded-e bg-zinc-900 text-gray-50" />
+            <input type="text" {...register('descricao')} placeholder="DESCRIÇÃO" className="p-2 w-52 rounded-e bg-zinc-900 text-gray-50" />
             {errors.descricao?.message && <span className="text-red-500 text-sm">{errors.descricao.message}</span>}
 
-            <input type="number" {...register('valor')} placeholder="VALOR" className="p-2 rounded-e bg-zinc-900 text-gray-50" />
+            <input type="number" {...register('valor')} placeholder="VALOR" className="p-1 w-52 rounded-e bg-zinc-900 text-gray-50" />
             {errors.valor?.message && <span className="text-red-500 text-sm">{errors.valor.message}</span>}
 
 
-            <button type="submit" className="p-2 mt-3 rounded-e bg-blue-700 text-gray-50">CADASTRAR</button>
+            <button type="submit" className="p-1 w-52 mt-3 rounded-e bg-blue-700 text-gray-50">CADASTRAR</button>
           </form>
         </div>
       </div>

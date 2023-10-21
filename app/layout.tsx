@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className='flex md:flex-row p-0 m-0 border-none'>
+        <div className='p-0 m-0 border-none'>
           <Header/>
           {children}
         </div>
