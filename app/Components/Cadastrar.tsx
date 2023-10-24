@@ -76,7 +76,7 @@ export default function Cadastrar({}) {
 
   return (
     <>
-      <div className="flex w-screen h-screen justify-center pt-10 items-start bg-stone-900">
+      <div className="flex border-none w-screen h-screen justify-center pt-10 items-start bg-stone-900">
         <div className="flex flex-col py-2 px-5 rounded-2xl justify-center items-center gap-4 bg-slate-100">
           <h1 className="font-bold text-lg whitespace-nowrap">Cadastrar Prestador</h1>
           <form onSubmit={handleSubmit(handleFormSubmit)} className="flex flex-col gap-1" encType="multipart/form-data">

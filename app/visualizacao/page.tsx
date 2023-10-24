@@ -53,29 +53,27 @@ const Page = () => {
 
   return (
     <>
-      <div className='flex flex-1 flex-col justify-center pl-20 gap-10 text-white  h-screen w-screen bg-stone-900'>
-        <h1 className='text-4xl'>Lista de Prestadores</h1>
+      <div className='flex flex-1 flex-col justify-start items-center gap-10 text-white  h-screen w-screen bg-stone-900'>
+        <h1 className='text-2xl mt-10'>Lista de Prestadores</h1>
         <table className='table-auto mr-10 bg-black'>
           <thead>
             <tr>
-              <th className='px-4 py-2'>Nome</th>
-              <th className='px-4 py-2'>Email</th>
-              <th className='px-4 py-2'>Telefone</th>
-              <th className='px-4 py-2'>Serviço</th>
-              <th className='px-4 py-2'>Descrição</th>
-              <th className='px-4 py-2'>Valor</th>
+              <th className='px-1 py-1'>Nome</th>
+              <th className='px-1 py-1'>Email</th>
+              <th className='px-1 py-1'>Telefone</th>
+              <th className='px-1 py-1'>Serviço</th>
+              <th className='px-1 py-1'>Valor</th>
             </tr>
           </thead>
           <tbody>
             {prestadoresExibidos.map((prestador) => (
               <tr key={prestador.id}>
-                <td className='border px-4 py-2'>{prestador.nome}</td>
-                <td className='border px-4 py-2'>{prestador.email}</td>
-                <td className='border px-4 py-2'>{prestador.telefone}</td>
-                <td className='border px-4 py-2'>{prestador.nome_servico}</td>
-                <td className='border px-4 py-2'>{prestador.descricao}</td>
-                <td className='border px-4 py-2'>{prestador.valor}</td>
-                <td onClick={() => handleDelete(prestador.id)} className='border bg-red-600 border-black px-4 py-2'>
+                <td className='border px-1 py-1'>{prestador.nome}</td>
+                <td className='border px-1 py-1'>{prestador.email}</td>
+                <td className='border px-1 py-1'>{prestador.telefone}</td>
+                <td className='border px-1 py-1'>{prestador.nome_servico}</td>
+                <td className='border px-1 py-1'>{prestador.valor}</td>
+                <td onClick={() => handleDelete(prestador.id)} className='border bg-red-600 border-black px-1 py-1'>
                   <button>Excluir</button>
                 </td>
               </tr>

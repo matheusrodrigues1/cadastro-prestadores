@@ -11,12 +11,12 @@ function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   return (
     <>
-      <div className='flex justify-between items-center bg-slate-950 p-1 h-24 w-full text-white'>
+      <div className='flex justify-between items-center bg-slate-950 p-3 h-24 w-full text-white'>
         <Image src={Icone} alt='icon' className='h-24 w-24'/>
-        <div className='flex items-center gap-1 relative'>
+        <div className='flex items-center gap-1 relative mr-3'>
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className='p-2 whitespace-nowrap bg-transparent rounded-xl'
+            className='p-1 mr-3 border-solid border-white border-2 whitespace-nowrap bg-transparent rounded-xl'
           >
             <Menu size={30} />
           </button>

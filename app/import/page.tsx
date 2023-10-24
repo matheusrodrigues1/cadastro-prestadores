@@ -26,10 +26,10 @@ function Page() {
 
   return (
     <>
-      <div  className='flex flex-1 justify-center items-center h-screen w-screen bg-stone-900'>
+      <div  className='flex flex-1 justify-center items-start pt-24 h-screen w-screen bg-stone-900'>
         <form onSubmit={handleSubmit(handleCSVSubmit)} className='flex bg-gray-50 w-[100%] pt-1 rounded-3xl gap-2 flex-col justify-center items-center' encType="multipart/form-data">
           <input type="file" {...register('file')} className='mt-2 text-sm' />
-          <button type="submit" className='py-2 px-5 rounded-xl bg-blue-700 text-gray-50'>Importar</button>
+          <button type="submit" className='py-2 px-9 rounded-xl bg-blue-700 text-gray-50 mb-2'>Importar</button>
         </form>
       </div>
     </>
