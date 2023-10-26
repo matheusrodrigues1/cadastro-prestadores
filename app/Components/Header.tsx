@@ -9,6 +9,11 @@ import { Menu } from 'feather-icons-react';
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+
+  const closeMenu = () => {
+    setMenuOpen(false);
+  }
+
   return (
     <>
       <div className='flex justify-between items-center bg-slate-950 p-3 h-24 w-full text-white'>
@@ -20,7 +25,7 @@ function Header() {
           >
             <Menu size={30} />
           </button>
-          {menuOpen && <DropDownMenu />}
+          {menuOpen && <DropDownMenu closeMenu={closeMenu} />}
         </div>
       </div>
     </>

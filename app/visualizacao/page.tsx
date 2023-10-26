@@ -54,7 +54,7 @@ const Page = () => {
   return (
     <>
       <div className='flex flex-1 flex-col justify-start items-center gap-10 text-white  h-screen w-screen bg-stone-900'>
-        <h1 className='text-2xl mt-10'>Lista de Prestadores</h1>
+        <h1 className='text-2xl mt-10 whitespace-nowrap'>Lista de Prestadores</h1>
         <table className='table-auto mr-10 bg-black'>
           <thead>
             <tr>
