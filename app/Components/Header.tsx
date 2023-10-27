@@ -16,7 +16,7 @@ function Header() {
 
   return (
     <>
-      <div className='flex justify-between items-center bg-slate-950 p-3 h-24 w-full text-white'>
+      <div className='flex justify-between items-center bg-slate-950 p-3 h-24 lg:h-20 w-full text-white'>
         <Image src={Icone} alt='icon' className='h-24 w-24'/>
         <div className='flex items-center gap-1 relative mr-3'>
           <button

@@ -53,7 +53,7 @@ const Page = () => {
 
   return (
     <>
-      <div className='flex flex-1 flex-col justify-start items-center gap-10 text-white  h-screen w-screen bg-stone-900'>
+      <div className='flex flex-1 flex-col justify-start items-start gap-10 text-white  h-screen w-screen bg-stone-900'>
         <h1 className='text-2xl mt-10 whitespace-nowrap'>Lista de Prestadores</h1>
         <table className='table-auto mr-10 bg-black'>
           <thead>
@@ -67,12 +67,12 @@ const Page = () => {
           </thead>
           <tbody>
             {prestadoresExibidos.map((prestador) => (
-              <tr key={prestador.id}>
-                <td className='border px-1 py-1'>{prestador.nome}</td>
-                <td className='border px-1 py-1'>{prestador.email}</td>
-                <td className='border px-1 py-1'>{prestador.telefone}</td>
-                <td className='border px-1 py-1'>{prestador.nome_servico}</td>
-                <td className='border px-1 py-1'>{prestador.valor}</td>
+              <tr key={prestador.id} >
+                <td className='border px-[2px] py-1'>{prestador.nome}</td>
+                <td className='border px-[2px] py-1'>{prestador.email}</td>
+                <td className='border px-[2px] py-1'>{prestador.telefone}</td>
+                <td className='border px-[2px] py-1'>{prestador.nome_servico}</td>
+                <td className='border px-[2px] py-1'>{prestador.valor}</td>
                 <td onClick={() => handleDelete(prestador.id)} className='border bg-red-600 border-black px-1 py-1'>
                   <button>Excluir</button>
                 </td>
