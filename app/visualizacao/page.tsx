@@ -53,40 +53,51 @@ const Page = () => {
 
   return (
     <>
-      <div className='bg-gray-200 p-5 h-screen'>
-        <div className="bg-white pt-6 shadow rounded-md">
-          <div className='px-4'>
-            <h1 className='text-lg leading-6 font-medium text-gray-900'>Lista de Prestadores</h1>
-          </div>
-          <div className='mt-6'>
-            <table className='w-full'>
-                <thead>
-                  <tr>
-                    <th className='px-1 py-1'>Nome</th>
-                    <th className='px-1 py-1'>Email</th>
-                    <th className='px-1 py-1'>Telefone</th>
-                    <th className='px-1 py-1'>Serviço</th>
-                    <th className='px-1 py-1'>Valor</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {prestadoresExibidos.map((prestador) => (
-                    <tr key={prestador.id} >
-                        <td className='border px-[2px] py-1'>{prestador.nome}</td>
-                        <td className='border px-[2px] py-1'>{prestador.email}</td>
-                        <td className='border px-[2px] py-1'>{prestador.telefone}</td>
-                        <td className='border px-[2px] py-1'>{prestador.nome_servico}</td>
-                        <td className='border px-[2px] py-1'>{prestador.valor}</td>
-                        <td onClick={() => handleDelete(prestador.id)} className='border bg-red-600 border-black px-1 py-1'>
-                              <button>Excluir</button>
-                        </td>
-                    </tr>
-                        ))}
-                      </tbody>
-              </table>
-          </div>
+      <div className='flex flex-col p-5 h-screen bg-gray-100'>
+        <h1 className='text-xl mb-2'>Lista de Prestadores</h1>
+
+        <div className="overflow-auto rounded-lg shadow hidden md:block">
+          <table className='w-full'>
+            <thead className='bg-gray-50 border-b-2 border-gray-20'>
+              <tr>
+                <th className='p-3 text-sm font-semibold tracking-wid text-left'>Nome</th>
+                <th className='w-24 p-3 text-sm font-semibold tracking-wide text-left'>Telefone</th>
+                <th className='w-24 p-3 text-sm font-semibold tracking-wide text-left'>Serviço</th>
+                <th className='w-32 p-3 text-sm font-semibold tracking-wide text-left'>Valor</th>
+                <th className='w-24 p-3 text-sm font-semibold tracking-wide text-left'> </th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-gray-100">
+              {prestadoresExibidos.map((prestador) => (
+                <tr key={prestador.id} >
+                  <td className='p-3 whitespace-nowrap text-sm text-gray-700'>{prestador.nome}</td>
+                  <td className='p-3 whitespace-nowrap text-sm text-gray-700'>{prestador.telefone}</td>
+                  <td className='p-3 whitespace-nowrap text-sm text-gray-700'>{prestador.nome_servico}</td>
+                  <td className='p-3 whitespace-nowrap text-sm text-gray-700'>R$ {prestador.valor}</td>
+                  <td onClick={() => handleDelete(prestador.id)} className='whitespace-nowrap p-3 text-sm text-gray-700'>
+                    <button className='bg-red-600 p-1 border rounded text-gray-200'>Excluir</button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
 
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:hidden">
+          <div className="bg-white space-y-3 p-4 rounded-lg shadow">
+            {prestadoresExibidos.map((prestador) => (
+              <div key={prestador.id} className="flex justify-between items-center">
+                <div>
+                  <p className="text-sm font-semibold">{prestador.nome}</p>
+                  <p className="text-xs text-gray-500">{prestador.nome_servico}</p>
+                </div>
+                <p className="text-sm font-semibold">{prestador.telefone}</p>
+                <p className="text-sm font-semibold">R$ {prestador.valor}</p>
+                <button className='bg-red-600 p-1 border rounded text-gray-200' onClick={() => handleDelete(prestador.id)}>Excluir</button>
+              </div>
+            ))}
+          </div>
+        </div>
 
 
         <div className='mt-4 flex justify-center'>
