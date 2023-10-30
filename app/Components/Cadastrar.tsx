@@ -4,7 +4,6 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import axios from 'axios';
 import { number, z, ZodError } from 'zod';
-import { useRouter } from "next/navigation";
 
 interface FormValues {
   nome: string;
@@ -76,8 +75,8 @@ export default function Cadastrar({}) {
 
   return (
     <>
-      <div className="flex border-none w-screen h-screen justify-center pt-10 lg:pt-7 items-start bg-stone-900">
-        <div className="flex flex-col py-2 lg:py-5 px-5 lg:px-16 rounded-2xl justify-center items-center gap-4 bg-slate-100">
+      <div className="flex border-none w-screen h-screen justify-center pt-10 lg:pt-7 items-start bg-gray-200">
+        <div className="flex flex-col py-2 lg:py-5 px-5 lg:px-16 rounded-2xl justify-center items-center gap-4 bg-gray-50">
           <h1 className="font-bold text-lg lg:text-3xl whitespace-nowrap">Cadastrar Prestador</h1>
           <form onSubmit={handleSubmit(handleFormSubmit)} className="flex flex-col gap-1" encType="multipart/form-data">
             
