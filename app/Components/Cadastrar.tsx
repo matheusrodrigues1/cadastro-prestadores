@@ -1,6 +1,6 @@
 'use client'
 
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import axios from 'axios';
 import { number, z, ZodError } from 'zod';
@@ -26,6 +26,11 @@ const schemaForm = z.object({
 
 
 export default function Cadastrar({}) {
+
+    const [buttonText, setButtonText] = useState("CADASTRAR");
+    const [isSuccessVisible, setSuccessVisible] = useState(false);
+
+
   
     // const router = useRouter()
     const { handleSubmit, register, formState: { errors }, reset } = useForm<FormValues>({
@@ -64,6 +69,12 @@ export default function Cadastrar({}) {
           input.value = '';
         });
 
+        setSuccessVisible(true);
+        
+        setTimeout(() => {
+          setSuccessVisible(false);
+        }, 3000);
+
       } catch (error) {
         if (error instanceof ZodError) {
           console.error("Erro de validação:", error.errors);
@@ -100,7 +111,7 @@ export default function Cadastrar({}) {
             {errors.valor?.message && <span className="text-red-500 text-sm">{errors.valor.message}</span>}
 
 
-            <button type="submit" className="p-1 lg:p-2 w-52 lg:w-80 mt-3 rounded-e bg-blue-700 text-gray-50">CADASTRAR</button>
+            <button type="submit" className="p-1 lg:p-2 w-52 lg:w-80 mt-3 rounded-e bg-blue-700 text-gray-50">  {isSuccessVisible ? "CADASTRADO COM SUCESSO!" : "CADASTRAR"}</button>
           </form>
         </div>
       </div>
